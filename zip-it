@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+zip "Gruppe-3-Blatt-$1.zip" "$1"/*.asm "$1"/Gruppe-3-*.pdf

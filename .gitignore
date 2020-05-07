@@ -8,3 +8,4 @@
 svg-inkscape
 # rendered plots should not be comitted
 *.plot.pdf
+*.zip
