@@ -1,0 +1,10 @@
+# various building artifacts
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+# output from svg-to-pdf conversion 
+svg-inkscape
+# rendered plots should not be comitted
+*.plot.pdf

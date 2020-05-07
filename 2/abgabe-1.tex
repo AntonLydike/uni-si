@@ -1,0 +1,49 @@
+\input{../preamble.tex}
+
+\cfgtitle{2}
+\date{Donnerstag 07.05.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{5+1} 
+    \textbf{a)}
+    \lstinputlisting[linerange={1-48},basicstyle=\tiny]{1.asm}
+
+    \textbf{b)}\\
+    Betrachte:
+    $$ 12! = 479001600 < 2^{31} = 2147483648 < 2^{32} = 4294967296 < 13! = 6227020800 $$
+    $12!$ ist die letzte zahl die wir in einem signed 32 bit register speichern können. 32 bit unsigned lässt $13!$ immer noch nicht zu, da $13! > 2^{32} = 4294967296$
+
+    \vspace{1cm}
+    \task{2}{5}
+    \lstinputlisting[linerange={1-37},basicstyle=\tiny]{2.asm}
+
+    \vspace{1cm}
+    \task{3}{2+2+1}
+    \begin{center}
+        
+        \begin{tabular}{l|l}
+            RISC  & CISC  \\ \hline 
+            0x100 & 0x100 \\ 
+            0x104 & 0x104 \\ 
+            0x108 & 0x020 \\ 
+            0x020 & 0x108 \\ 
+            0x10c & 0x30  \\ 
+            0x110 & -
+        \end{tabular}
+    \end{center}
+
+    CISC ist schneller, da es einen RAM Access weniger gibt.
+
+    \vspace{1cm}
+    \task{4}{8}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{{4.plot}.pdf}
+    \end{center}
+
+    \vspace{1cm}
+    \pointsttl{24}
+\end{document}
+
