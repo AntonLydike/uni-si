@@ -1,0 +1,49 @@
+\input{../preamble.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}   
+
+\cfgtitle{3}
+\date{Donnerstag 14.05.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{5}
+
+    \lstinputlisting{1.asm}
+
+    \task{2}{4}
+
+    \lstinputlisting{2.asm}
+
+    \task{3}{6}
+    \lstinputlisting{3.asm}
+    
+    \task{4}{2+3+3}
+    \begin{enumerate}[label=\alph*)]
+        \item \hfill \begin{center}
+            \begin{tikzpicture}[->,>=stealth',node distance=2cm]
+                \node[state] (S1) {S1};
+                \node[state] (S2) [right of=S1]  {S2};
+                \node[state] (S5) [below of=S2] {S5};
+                \node[state] (S4) [right of=S2] {S4};
+                \node[state] (S3) [right of=S4] {S3};
+    
+                \path (S1) edge (S2)
+                      (S2) edge (S5)
+                      (S3) edge (S4)
+                      (S4) edge (S5);
+            \end{tikzpicture}
+        \end{center}
+
+        \item \hfill
+        \lstinputlisting{4b.asm}
+        \item \hfill
+        \lstinputlisting{4c.asm}
+    \end{enumerate}
+
+    \pointsttl{23}
+\end{document}
+
