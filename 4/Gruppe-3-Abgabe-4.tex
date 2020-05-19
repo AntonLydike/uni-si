@@ -1,0 +1,31 @@
+\input{../preamble.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}   
+
+\cfgtitle{4}
+\date{Mittwoch 20.05.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{4}
+    \task{2}{5}
+    \task{3}{1+2+3}
+
+    \begin{tabular}{r@{\hspace{.5cm}}|@{\hspace{.5cm}}c@{\hspace{.5cm}}r@{\hspace{.15cm}}l}
+        Name            & Größe             & \multicolumn{2}{c}{Latenz} \\\hline
+        L1-Cache        & $2^{11}$ Bytes    & 8     & Cycles \\
+        L2-Cache        & $2^{17}$ Bytes    & 30    & Cycles \\
+        L3-Cache        & $2^{22}$ Bytes    & 100   & Cycles \\
+        Arbeitsspeicher & $2^{27}$ Bytes    & $<300$& Cycles
+    \end{tabular}
+
+    \task{4}{5+3}
+    \lstinputlisting{4.asm}
+
+
+    \pointsttl{23}
+\end{document}
+
