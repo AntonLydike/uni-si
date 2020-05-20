@@ -20,14 +20,15 @@
     
     
     \task{3}{1+2+3}
-    \begin{tabular}{r@{\hspace{.5cm}}|@{\hspace{.5cm}}c@{\hspace{.5cm}}r@{\hspace{.15cm}}l}
-        Name            & Größe             & \multicolumn{2}{c}{Latenz} \\\hline
-        L1-Cache        & $2^{11}$ Bytes    & 8     & Cycles \\
-        L2-Cache        & $2^{17}$ Bytes    & 30    & Cycles \\
-        L3-Cache        & $2^{22}$ Bytes    & 100   & Cycles \\
-        Arbeitsspeicher & $2^{27}$ Bytes    & $<300$& Cycles
-    \end{tabular}
-
+    \begin{center}
+        \begin{tabular}{r@{\hspace{.5cm}}|@{\hspace{.5cm}}c@{\hspace{.5cm}}r@{\hspace{.13cm}}l}
+            Name            & Größe             & \multicolumn{2}{c}{Latenz} \\\hline
+            L1-Cache        & $2^{11}$ Bytes    & 8      & Cycles \\
+            L2-Cache        & $2^{17}$ Bytes    & 30     & Cycles \\
+            L3-Cache        & $2^{22}$ Bytes    & 120    & Cycles \\
+            Arbeitsspeicher & $2^{27}$ Bytes    & $<400$ & Cycles
+        \end{tabular}
+    \end{center}
     \pagebreak
     \task{4}{5+3}
     \lstinputlisting{4.asm}

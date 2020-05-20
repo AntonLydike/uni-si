@@ -14,9 +14,9 @@ main:
 main_loop:
         add s1, s1, -4              # one address to the left
         jal rand                    # generate a random number
-        sw a0, array(s1)            # save it to the array
+        sw  a0, array(s1)           # save it to the array
         bne s1, zero , main_loop    # repeat until we saved array(0)
-        add	a7, zero, 93            # exit syscall
+        add a7, zero, 93            # exit syscall
         add a0, zero, 0             # exit code 0
         scall 
 

@@ -39,7 +39,7 @@
   },
   morekeywords=[2]{ % sections of our code and other directives
     .align, .ascii, .asciiz, .byte, .data, .double, .extern,
-    .float, .globl, .half, .kdata, .ktext,.set, .space, .text, .word
+    .float, .globl, .half, .kdata, .ktext, .set, .space, .text, .word
   },
   morekeywords=[3]{ % registers
     zero, ra, sp, gp, tp, s0, fp,
@@ -61,7 +61,7 @@
   literate={ö}{{\"o}}1
            {ä}{{\"a}}1
            {ü}{{\"u}}1,
-  basicstyle=\tiny\ttfamily,                    % small code
+  basicstyle=\footnotesize\ttfamily,                    % small code
   breaklines=true,                              % break long lines
   commentstyle=\itshape\color{green!50!black},  % comments are green
   keywordstyle=[1]\color{blue!80!black},        % instructions are blue
@@ -87,7 +87,11 @@
 % and the total points for this sheet
 \newcommand\pointsttl[1]{\noindent\textbf{Gesamtpunkte: \hfill \underline{\,\,\,\,\,\,}\,\,/#1p.}\\}
 
+% no paragraph indentation
 \setlength{\parindent}{0pt}
+
+% array spacing
+\renewcommand{\arraystretch}{1.3}
 
 \newcommand\cfgtitle[1]{\title{\vspace{-1.5cm}Übungsblatt #1\\%
 \begin{large} Übungsgruppe Pentium \end{large}} \lfoot{Übungsblatt #1}\cfoot{Übungsgruppe Pentium}}
