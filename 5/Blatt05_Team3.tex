@@ -1,0 +1,124 @@
+\input{../preamble.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}   
+
+\cfgtitle{5}
+\date{Donnerstag 28.05.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{3+12+3}
+
+    \begin{enumerate}[label=\alph*)]
+
+        \item \hfill \begin{center}
+            \begin{tabular}{r|c|c|c}
+                        & Tag     & Index  & Blockoffset \\ \hline
+                Direkt-abgebildeter Cache  & 27 bits & 3 bits & 2 bits      \\
+                4-fach mengenassoziativer Cache  & 29 bits & 1 bits & 2 bits      \\
+                vollassoziativer Cache    & 30 bits & 0 bits & 2 bits      
+            \end{tabular} 
+        \end{center}
+        %    
+        \item \textbf{Direkt-abgebildeter Cache:}
+        \\
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{|r|c||c|c|c|c|c|c|c|c|}
+           \hline &   &   & H & H & H &   &   & H  \\ \hline
+                  & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+                0 & 378D3F,010 & & 378D3F,010 & & 378D3F,010 & 1F2970,000 & &  \\ \hline
+                1 & 1D5496,111 & & & & & & &                                       \\ \hline
+                2 & 2AA013,000 & & & & & & &                                       \\ \hline
+                3 & 000000,000 & & & & & & &                                       \\ \hline
+                4 & 378D66,110 & & & & & & 378D66,010 &   \\ \hline
+                5 & 378DB4,011 & & & & & & &                                       \\ \hline
+                6 & 123456,000 & & & & & & &                                       \\ \hline
+                7 & 1F296E,111 & 1F296F,111 & & 1F296F,111 & & & & 1F296F,111  \\ \hline
+            \end{tabular} 
+        }
+
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{|r|c|c|c|c|c|c|c|c|c|}
+            \hline &   & H &   & H &   &   &   & H & H \\ \hline
+                   & 8 & 9 & 10& 11& 12& 13& 14& 15& 16 \\ \hline
+                 0 & 1F2970,000 & 1F2970,000 & 378D8D,100 & & & 1F2970,000 & & 1F2970,000 & \\ \hline
+                 1 & 1D5496,111 & & & & & & 378D8D,100 & & \\ \hline
+                 2 & 2AA013,000 & & & & & & & & \\ \hline
+                 3 & 000000,000 & & & & & & & & \\ \hline
+                 4 & 378DB4,011 & & & & 378D66,010 & & & & \\ \hline
+                 5 & 378DB4,011 & & & & & & & & 378DB4,011 \\ \hline
+                 6 & 123456,000 & & & & & & & & \\ \hline
+                 7 & 1F296F,111 & & & 1F296F,111 & & & & & \\ \hline
+             \end{tabular} 
+        }
+
+         \bigskip
+        \textbf{4-fach mengenassoziativer Cache:} \\
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{|r|c||c|c|c|c|c|c|c|}
+        \hline  &   & H &   & H & H &   &   & H \\ \hline
+                & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+                0 & 378D3F4,1 & & 378D3F4,0 & & 378D3F4,0 & 1F29700,0 & 378D665,0 & \\ 
+                  & 28AC1B1,0 & & 378D3F4,1 & & 378D3F4,1 & 378D3F4,0 & 1F29700,0 & \\ 
+                  &           & & 28AC1B1,0 & & 28AC1B1,0 & 378D3F4,1 & 378D3F4,0 & \\ 
+                  &           & &           & &           & 28AC1B1,0 & 378D3F4,1 & \\ \hline
+                1 & 378D8D8,0 & 378D8D8,0 & & 378D8D8,0 & & & & 1F296FF,1 \\ 
+                  & 1F296FF,1 & 1F296FF,1 & & 1F296FF,1 & & & & 378D8D8,0 \\ 
+                  &           &           & &           & & & &           \\ 
+                  &           &           & &           & & & &           \\ \hline
+            \end{tabular} 
+        }
+        \\ \vspace{1cm} \\
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{|r|c|c|c|c|c|c|c|c|c|}
+           \hline &   & H &   & H & H & H & H & H &  \\ \hline
+                  & 8 & 9 & 10& 11& 12& 13& 14& 15& 16 \\ \hline
+                0 & 378DB47,0 & 1F29700,0 & 378D8D8,0 & & 378D665,0 & 1F29700,0 & & 1F29700,0 &\\ 
+                  & 378D665,0 & 378DB47,0 & 1F29700,0 & & 378D8D8,0 & 378D665,0 & & 378D665,0 &\\ 
+                  & 1F29700,0 & 378D665,0 & 378DB47,0 & & 1F29700,0 & 378D8D8,0 & & 378D8D8,0 &\\ 
+                  & 378D3F4,0 & 378D3F4,0 & 378D665,0 & & 378DB47,0 & 378DB47,0 & & 378DB47,0 &\\ \hline
+                1 & 1F296FF,1 & & & 1F296FF,1 & & & 378D8D8,0 & & 378DB47,0 \\ 
+                  & 378D8D8,0 & & & 378D8D8,0 & & & 1F296FF,1 & & 378D8D8,0 \\ 
+                  &           & & &           & & &           & & 1F296FF,1 \\ 
+                  &           & & &           & & &           & &           \\ \hline
+            \end{tabular} 
+        }
+
+        \bigskip
+
+        \textbf{vollassoziativer Cache:} \bigskip \\
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{|c|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline    &   &   & H & H & H &   &   & H &   & H &   & H  & H  & H  &    & H  &   \\ \hline
+                & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\ \hline
+                0 & 23AB511,01 & 1F296FF,11 & 378D3F4,00 & 1F296FF,11 & 378D3F4,00 & 1F29700,00 & 378D665,00 & 1F296FF,11 & 378DB47,00 & 1F29700,00 & 378D8D8,00 & 1F296FF,11 & 378D665,00 & 1F29700,00 & 378D8D8,01
+                & 1F29700,00 & 378DB47,01 \\
+                & 378D3F4,00 & 23AB511,01 & 1F296FF,11 & 378D3F4,00 & 1F296FF,11 & 378D3F4,00 & 1F29700,00 & 378D665,00 & 1F296FF,11 & 378DB47,00 & 1F29700,00 & 378D8D8,00 & 1F296FF,11 & 378D665,00 & 1F29700,00 
+                & 378D8D8,01 & 1F29700,00 \\
+                & 1F296FF,00 & 378D3F4,00 & 23AB511,01 & 23AB511,01 & 23AB511,01 & 1F296FF,11 & 378D3F4,00 & 1F29700,00 & 378D665,00 & 1F296FF,11 & 378DB47,00 & 1F29700,00 & 378D8D8,00 & 1F296FF,11 & 378D665,00 & 378D665,00 & 378D8D8,01 \\
+                &  & 1F296FF,00 & 1F296FF,00 & 1F296FF,00 & 1F296FF,00 & 23AB511,01 & 1F296FF,11 & 378D3F4,00 & 1F29700,00 & 378D665,00 & 1F296FF,11 & 378DB47,00 & 1F29700,00 & 378D8D8,00 & 1F296FF,11 & 1F296FF,11 & 378D665,00 \\
+                &  &  &  &  &  & 1F296FF,00 & 23AB511,01 & 23AB511,01 & 378D3F4,00 & 378D3F4,00 & 378D665,00 & 378D665,00 & 378DB47,00 & 378DB47,00 & 378D8D8,00 & 378D8D8,00 & 1F296FF,11 \\
+                &  &  &  &  &  &  & 1F296FF,00 & 1F296FF,00 & 23AB511,01 & 23AB511,01 & 378D3F4,00 & 378D3F4,00 & 378D3F4,00 & 378D3F4,00 & 378DB47,00 & 378DB47,00 & 378D8D8,00 \\
+                &  &  &  &  &  &  &  &  & 1F296FF,00 & 1F296FF,00 & 23AB511,01 & 23AB511,01 & 23AB511,01 & 23AB511,01 & 378D3F4,00 & 378D3F4,00 & 378DB47,00 \\
+                &  &  &  &  &  &  &  &  &  &  & 1F296FF,00 & 1F296FF,00 & 1F296FF,00 & 1F296FF,00 & 23AB511,01 & 23AB511,01 & 378D3F4,00 \\ \hline
+            \end{tabular} 
+        }
+
+        \item \textbf{Trefferraten:} \\
+        \resizebox{0.9\textwidth}{!}{
+            \begin{tabular}{r|c|c|c}
+                & Direkt-abgebildeter Cache & 4-fach mengenassoziativer Cache &
+Vollassoziativer Cache \\ \hline
+                $\sum$ Treffer & 8 & 10 & 9 \\
+                Trefferraten & 50\% & 62,5\% & 56,25\% \\
+                $\sum$ Zugriffszeit & 408ns & 340ns & 368ns \\
+                $\varnothing$ Zugriffszeit & 25,5ns & 21,25ns & 23ns
+            \end{tabular}
+        }
+    \end{enumerate}
+    \pointsttl{18}
+\end{document}
+
