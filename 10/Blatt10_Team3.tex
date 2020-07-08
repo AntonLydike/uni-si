@@ -1,0 +1,45 @@
+\input{../preamble.tex}
+
+\usepackage{wasysym}
+
+\cfgtitle{10}
+\date{Donnerstag 09.07.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{6}
+    \begin{center}
+        \begin{tabular}{|c|c||c|c|}
+            \hline 
+            virt. Adresse & Zugriff & phys. Adresse & Schutzverl.? \\ \hline
+            \texttt{0x000} & Fetch     & \texttt{0x400} & no \\
+            \texttt{0x2a0} & Lesen     & \texttt{0x1b0} & size \\
+            \texttt{0x1b0} & Schreiben & \texttt{0x130} & read-only \\
+            \texttt{0x330} & Lesen     & \texttt{0x0d0} & no \\
+            \texttt{0x1c0} & Fetch     & \texttt{0x140} & data-only \\
+            \texttt{0x304} & Schreiben & \texttt{0x0a4} & no \\ \hline
+        \end{tabular}
+    \end{center}
+
+    \task{2}{10}
+
+    \pointsttl{16}
+\end{document}
+
+
+% python code task 1
+% access = [0x000, 0x2a0, 0x1b0, 0x330, 0x1c0, 0x304]
+% segment_addr = [0x400, 0x080, 0x110, 0x0a0]
+% segment_size = [0xff, 0xd0, 0x80, 0x40]
+% 
+% def segment_num(virt_addr):
+%     i    = virt_addr >> 8
+%     addr = virt_addr & 0xff
+%     if addr > segment_size[i]:
+%         return (i, hex(segment_addr[i] + addr), hex(addr), "out")
+%     return (i, hex(segment_addr[i] + addr), hex(addr), "in")
+% 
+% for addr in access:
+%     print(f"address {hex(addr)} has solution {segment_num(addr)}")
