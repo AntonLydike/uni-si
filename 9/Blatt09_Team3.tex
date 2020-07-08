@@ -1,0 +1,25 @@
+\input{../preamble.tex}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}   
+
+\cfgtitle{5}
+\date{Donnerstag 28.05.2020}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+
+    \task{1}{6+4+1}
+    \begin{enumerate}
+        \item \hfill \\ \lstinputlisting[numbers=left,stepnumber=1]{1a.asm}
+        \pagebreak
+        \item \hfill \\ \lstinputlisting[numbers=left,stepnumber=1]{1b.asm}
+        \item Zeilen 11, 12, 20-22 könenn weggelassen werden, da a0, a1, und a2 nicht durch den aufruf von berechnung überschrieben werden. Außerdem kann mit t-registern, anstelle von s-registern gearbeitet werden, was den vorteil hat, dass die genutzten register nicht gesichert werden müssen.
+    \end{enumerate}
+
+    \task{2}{10}
+
+    \pointsttl{26}
+\end{document}
+
