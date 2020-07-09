@@ -2,4 +2,4 @@
 
 cd $1
 
-zip ../"Gruppe-3-Blatt-$1.zip" *.asm *Team3*.pdf
+zip ../"Gruppe-3-Blatt-$1.zip" *.asm *.c *Team3*.pdf
